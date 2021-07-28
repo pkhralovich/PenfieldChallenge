@@ -1,3 +1,11 @@
 div.content {
     min-height: 100vh;
+    max-width: 1440px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: var(--spacing-large) var(--spacing-medium);
+    margin: 0 auto;
 }

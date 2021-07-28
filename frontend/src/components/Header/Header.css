@@ -1,0 +1,58 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.header .icon {
+    width: 150px;
+    height: auto;
+    margin-bottom: var(--spacing-medium);
+}
+
+.header h1, .header h2 {
+    font-size: var(--font-xlarge);
+    margin: 0;
+    text-align: center;
+}
+
+.header h2 {
+    text-transform: uppercase;
+}
+
+.header .message {
+    font-size: var(--font-large);
+    text-align: center;
+    line-height: 1.5;
+}
+
+.header .separator {
+    width: 100%;
+    height: 0px;
+    background: #7e7e7e;
+
+    margin: var(--spacing-large) 0;
+}
+
+@media screen and (max-width: 576px) {
+    .header .icon {
+        width: 100px;
+    }
+    
+    .header h1, .header h2 {
+        font-size: var(--font-large);
+    }
+
+    .header .separator {
+        margin: var(--spacing-medium) 0;
+    }
+
+    .header .message {
+        font-size: var(--font-medium);
+    }
+
+    .header .message > br:first-child {
+        display: none;
+    }
+}

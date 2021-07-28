@@ -7,7 +7,8 @@
   --font-xsmall: 10px;
   --font-small: 12px;
   --font-medium: 14px;
-  --font-large: 30px;
+  --font-large: 18px;
+  --font-xlarge: 30px;
 
   --spacing-small: 10px;
   --spacing-medium: 20px;
@@ -72,43 +73,3 @@ a {
   text-transform: unset;
   text-decoration: none;
 }
-
-/*@media screen and (max-width: 1200px) {
-  :root {
-    --font-xsmall: 12px;
-    --font-small: 16px;
-    --font-medium: 20px;
-    --font-large: 26px;
-
-    --spacing-small: 10px;
-    --spacing-medium: 15px;
-    --spacing-large: 25px;
-  }
-}
-
-@media screen and (max-width: 992px) {
-}
-
-@media screen and (max-width: 768px) {
-}
-
-@media screen and (max-width: 576px) {
-  :root {
-    --font-xsmall: 10px;
-    --font-small: 12px;
-    --font-medium: 14px;
-    --font-large: 18px;
-
-    --spacing-small: 5px;
-    --spacing-medium: 10px;
-    --spacing-large: 15px;
-  }
-
-  input {
-    border-radius: 2px;
-  }
-
-  button {
-    border-radius: 2px;
-  }
-}*/

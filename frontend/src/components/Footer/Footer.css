@@ -89,6 +89,10 @@
 }
 
 @media screen and (max-width: 576px) {
+    .footer-container .column-title {
+        margin-top: var(--spacing-small);
+    }
+
     .footer-container div.bottom {
         padding: var(--spacing-small) 0;
     
