@@ -1,0 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+:root {
+  --font-family: "Arimo",Helvetica,Arial,sans-serif;
+  
+  --font-xsmall: 10px;
+  --font-small: 12px;
+  --font-medium: 14px;
+  --font-large: 30px;
+
+  --spacing-small: 10px;
+  --spacing-medium: 20px;
+  --spacing-large: 40px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+
+  font-family: var(--font-family);
+  font-size: var(--font-small);
+}
+
+p {
+  margin: 0;
+}
+
+input {
+  width: calc(100% - var(--spacing-small) - 2px);
+  padding: var(--spacing-small) calc(var(--spacing-small) / 2);
+
+  border: 1px solid var(--font-color-hint);
+  border-radius: 4px;
+
+  font-size: var(--font-small);
+  font-family: var(--font-family);
+}
+
+input:focus {
+  border: 1px solid var(--accent-color);
+  outline: none;
+  transition: border .3s;
+}
+
+input.error {
+  border: 1px solid var(--accent-color-2);
+}
+
+.input-error {
+  margin-bottom: var(--spacing-small);
+  font-size: var(--font-small);
+  color: var(--accent-color-2);
+  min-height: var(--font-small);
+}
+
+input::placeholder { 
+  color: var(--accent-color);
+  opacity: 0.5;
+}
+
+input.error::placeholder {
+  color: var(--accent-color-2);
+  opacity: 0.5;
+}
+
+a {
+  padding: 0;
+  border: none;
+  background: none;
+  font-weight: normal;
+  text-transform: unset;
+  text-decoration: none;
+}
+
+/*@media screen and (max-width: 1200px) {
+  :root {
+    --font-xsmall: 12px;
+    --font-small: 16px;
+    --font-medium: 20px;
+    --font-large: 26px;
+
+    --spacing-small: 10px;
+    --spacing-medium: 15px;
+    --spacing-large: 25px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 576px) {
+  :root {
+    --font-xsmall: 10px;
+    --font-small: 12px;
+    --font-medium: 14px;
+    --font-large: 18px;
+
+    --spacing-small: 5px;
+    --spacing-medium: 10px;
+    --spacing-large: 15px;
+  }
+
+  input {
+    border-radius: 2px;
+  }
+
+  button {
+    border-radius: 2px;
+  }
+}*/

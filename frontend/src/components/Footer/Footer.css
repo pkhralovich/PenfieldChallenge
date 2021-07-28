@@ -1,0 +1,114 @@
+:root {
+    --footer-background: #111;
+    --footer-font-color: #fff;
+    --footer-font-color-darker: #7e7e7e;   
+}
+
+.footer-container  {
+    background: var(--footer-background);
+    color: var(--footer-font-color);
+    padding: var(--spacing-medium);
+    font-size: var(--font-small);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-container a {
+    width: 100%;
+    display: block;
+
+    margin-bottom: calc(var(--spacing-small) * 0.75);
+    color: var(--footer-font-color-darker);
+}
+
+.footer-container .main-column a {
+    color: var(--footer-font-color);
+}
+
+.footer-container a:hover{
+    color: var(--footer-font-color);
+}
+
+.footer-container > * {
+    max-width: 1440px;
+}
+
+.footer-container .main-column,
+.footer-container .column-title {
+    text-transform: uppercase;
+    font-family: "Anton", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 2;
+    color: var(--footer-font-color);
+}
+
+.footer-container div.bottom {
+    border-top: 1px solid #222;
+    padding: var(--spacing-small);
+
+    display: flex;
+    flex-direction: row;
+
+    font-size: var(--font-xsmall);
+}
+
+.footer-container div.bottom .links a,
+.footer-container div.bottom .copyright p {
+    width: auto;
+    display: inline-block;
+    padding: var(--spacing-small);
+
+    color: #7e7e7e;
+}
+
+.footer-container div.bottom .copyright p.location {
+    color: #fff;
+}
+
+.footer-container div.bottom .links a:hover {
+    color: #fff;
+}
+
+.footer-container div.bottom .links {
+    text-align: right;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    object-fit: cover;
+    margin-left: var(--spacing-small);
+    align-self: right;
+}
+
+.social-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+@media screen and (max-width: 576px) {
+    .footer-container div.bottom {
+        padding: var(--spacing-small) 0;
+    
+        display: flex;
+        flex-direction: row;
+    
+        font-size: var(--font-small);
+    }
+    
+    .footer-container div.bottom .links {
+        text-align: left;
+    }
+
+    .footer-container div.bottom .links a,
+    .footer-container div.bottom .copyright p {
+        width: 100%;
+        padding: calc(var(--spacing-small) * 0.5) 0;
+    }
+
+    .footer-container div.bottom .copyright {
+        margin-bottom: var(--spacing-small);
+    }
+}
