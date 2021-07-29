@@ -6,7 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
+import TextField from '@material-ui/core/TextField';
 
 /* Styles */
 import "./SurveyForm.css";
@@ -52,6 +52,14 @@ function App() {
             { getQuestion("size", "The size of the product corresponds to the description", "Strongly disagree", "Strongly agree") }
             { getQuestion("repeat", "Are you willing to buy again with us?", "Absolutely not", "Absolutely yes")}
         
+            <TextField
+                name="comment"
+                label="Any other comment"
+                placeholder="The checkout process is great!"
+                variant="outlined"
+                multiline
+                />
+
             <Button size="large">
                 Submit
             </Button>

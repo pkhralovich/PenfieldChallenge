@@ -26,7 +26,7 @@
     text-align: right;
 }
 
-.form-survey fieldset {
+.form-survey fieldset.label {
     margin-bottom: var(--spacing-large);
 }
 
