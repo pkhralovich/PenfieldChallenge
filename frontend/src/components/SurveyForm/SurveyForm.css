@@ -1,0 +1,108 @@
+.form-survey {
+    margin: var(--spacing-large) 0;
+    display: flex;
+    flex-direction: column;
+    color: #111 !important;
+}
+
+.form-survey legend {
+    margin-bottom: var(--spacing-medium);
+    color: #111 !important;
+    font-weight: 500;
+}
+
+.form-survey label.helper,
+.form-survey label.helper-full {
+    margin: auto 0;
+    color: #111 !important;
+    display: block;
+}
+
+.form-survey label.helper-full {
+    width: 150px;
+}
+
+.form-survey label.helper-full.right {
+    text-align: right;
+}
+
+.form-survey fieldset {
+    margin-bottom: var(--spacing-large);
+}
+
+.form-survey button {
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+
+    background-color: #111;
+    color: #fff;
+    border: 2px solid #111;
+}
+
+.form-survey button:hover{
+    background-color: #fff;
+    color: #111;
+}
+
+.form-survey .MuiRadio-colorSecondary.Mui-checked {
+    color: #111 !important;
+}
+
+.form-survey .MuiRadio-colorSecondary:hover {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.form-survey .MuiFormLabel-root.Mui-focused{
+    color: #111 !important;
+}
+
+.form-survey .helper-container.full {
+    display: none;
+}
+
+@media screen and (max-width: 576px) {
+    .form-survey legend {
+        text-align: center;
+        width: 100%;
+    }
+
+    .form-survey label.helper {
+        width: 100%;
+        display: block;
+    }
+
+    .form-survey .helper{
+        display: none;
+    }
+
+    .form-survey .helper-container.full {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin-top: var(--spacing-medium);
+        margin-bottom: var(--spacing-medium);
+    }
+
+    .form-survey .helper-container.full .left {
+        text-align: left;
+    }
+
+    .form-survey .helper-container.full .right {
+        text-align: right;
+    }
+
+    .form-survey button {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .form-survey .marks {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        width: 100%;
+    }
+
+    .form-survey label.helper-full {
+        display: none;
+    }
+}

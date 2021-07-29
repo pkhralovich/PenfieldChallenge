@@ -115,4 +115,14 @@
     .footer-container div.bottom .copyright {
         margin-bottom: var(--spacing-small);
     }
+
+    .social-container {
+        justify-content: left;
+        padding-top: var(--spacing-small);
+        padding-bottom: var(--spacing-medium);
+    }
+
+    .social-icon:first-child {
+        margin-left: 0;
+    }
 }
