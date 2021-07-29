@@ -10,25 +10,39 @@ import TextField from '@material-ui/core/TextField';
 import Alert from '@material-ui/lab/Alert';
 import AlertTitle from '@material-ui/lab/AlertTitle';
 
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 /*Services*/
 import SurveyService from '../../services/SurveyService';
 
 /* Styles */
 import "./SurveyForm.css";
 
-function App() {
+function App(props) {
     const [error, setError] = useState("");
+    const [showDialog, setShowDialog] = useState(false);
+    const [dialogMessage, setDialogMessage] = useState("");
+    const [dialogTitle, setDialogTitle] = useState("");
+    const [voucherCode, setVoucherCode] = useState("");
+    const [formData, setFormData] = useState(
+        {
+            satisfaction : "",
+            description : "",
+            quality : "",
+            size : "",
+            repeat : "",
+            comment : "",
+            sale : props.sale
+        }
+    );
 
     const service = new SurveyService();
 
-    const formData = {
-        satisfaction : "",
-        description : "",
-        quality : "",
-        size : "",
-        repeat : "",
-        comment : ""
-    }
+    //const formData = 
 
     const handleChange = function(event, key) {
         formData[key] = event.target.value;
@@ -82,17 +96,50 @@ function App() {
         return requiredFilled && validComment;
     }
 
-    const handleSubmit = async function(event) {
+    const handleSubmit = function(event) {
         setError("");
-        if (isValidData()) {
-            try {
-                let response = await service.submit(formData);
-                //TODO: Finish
-            } catch (e) {
-                //TODO: Finish
-            }
-        }
+        if (isValidData())
+            service.submit(formData, onSuccess, onError); 
     };
+
+    const onSuccess = function(response) {
+        switch (response.status) {
+            case (200): {
+                showSuccess("Your answers were successfuly saved. Here is your code, enjoy it!", response.data.code);
+                break;
+            }
+            case (400): {
+                showError("Some submited value was invalid. Please, check your answers!");
+                break;
+            }
+            case (404): {
+                showError("It seems that we are unable to find this purchase. Please, check your email!");
+                break;
+            }
+            case (409): {
+                showError("The survey associated to the current purchase was already submited. Please, check your email!");
+                break;
+            }
+            default: onError();
+        }
+    }
+
+    const onError = function(e) {
+        showError("Ups... Something strange happened!")
+    }
+
+    const showError = function(error) {
+        setDialogTitle("Something went wrong!");
+        setDialogMessage(error);
+        setShowDialog(true);
+    }
+
+    const showSuccess = function(success, voucher) {
+        setDialogTitle("Thank you for your time!");
+        setDialogMessage(success);
+        setVoucherCode(voucher);
+        setShowDialog(true);
+    }
 
     const renderError = function() {
         if (error) {
@@ -103,6 +150,51 @@ function App() {
                 </Alert>
             );
         } else return null;
+    }
+
+    const onClose = function() {
+        if (voucherCode) window.location.href="https://www.nike.com";
+        else setShowDialog(false);
+    }
+
+    let renderDialogContent = () => {
+        if (!voucherCode) {
+            return (
+                <div>
+                    {dialogMessage}
+                </div>
+            );
+        } else {
+            return (
+                <div>
+                    {dialogMessage}
+                    <br/> 
+                    <p className="voucher-code"> {voucherCode} </p>
+                </div>
+            );
+        }
+    };
+
+    const renderDialog = function() {
+        return (
+            <Dialog
+                open={showDialog}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+                <DialogTitle id="alert-dialog-title">{dialogTitle}</DialogTitle>
+                <DialogContent>
+                <DialogContentText id="alert-dialog-description">
+                    { renderDialogContent() }
+                </DialogContentText>
+                </DialogContent>
+                <DialogActions>
+                <Button color="primary" autoFocus onClick={onClose}>
+                    { voucherCode ? "Visit Nike" : "Try again"}
+                </Button>
+                </DialogActions>
+            </Dialog>
+        );
     }
 
     return (
@@ -128,6 +220,7 @@ function App() {
             </form>
 
             { renderError() }
+            { renderDialog() }
         </div>
     );
 }

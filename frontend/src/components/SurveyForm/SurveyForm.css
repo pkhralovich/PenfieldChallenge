@@ -31,20 +31,6 @@
     margin-bottom: var(--spacing-large);
 }
 
-.form-survey button {
-    margin-top: var(--spacing-large);
-    margin-bottom: var(--spacing-large);
-
-    background-color: #111;
-    color: #fff;
-    border: 2px solid #111;
-}
-
-.form-survey button:hover{
-    background-color: #fff;
-    color: #111;
-}
-
 .form-survey .MuiRadio-colorSecondary.Mui-checked {
     color: #111 !important;
 }
@@ -59,6 +45,14 @@
 
 .form-survey .helper-container.full {
     display: none;
+}
+
+.voucher-code {
+    width: 100%;
+    font-weight: bold;
+    text-align: center;
+    margin-top: var(--spacing-medium);
+    font-size: var(--font-xlarge)
 }
 
 @media screen and (max-width: 576px) {

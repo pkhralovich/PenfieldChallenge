@@ -50,10 +50,10 @@ function App() {
 
                 {/* Footer social networks links */}
                 <Grid item xs={12} sm={3} md={3} className="social-container">
-                    <img src={twitter_icon} className="social-icon"/>
-                    <img src={facebook_icon} className="social-icon"/>
-                    <img src={youtube_icon} className="social-icon"/>
-                    <img src={instagram_icon} className="social-icon"/>
+                    <img src={twitter_icon}   alt="Twitter icon"   className="social-icon"/>
+                    <img src={facebook_icon}  alt="Facebook icon"  className="social-icon"/>
+                    <img src={youtube_icon}   alt="Youtube icon"   className="social-icon"/>
+                    <img src={instagram_icon} alt="Instagram icon" className="social-icon"/>
                 </Grid>
             </Grid>
 

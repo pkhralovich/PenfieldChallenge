@@ -8,14 +8,16 @@ function getEndpoint(path) {
 }
 
 export default class SurveyService {
-    async submit(data) {
-        return axios({
+    submit(data, onSuccess, onError) {
+        axios({
             method: "post",
             url: getEndpoint("/survey"),
             data: data,
             validateStatus: function(status) {
                 return status === 200 ||  status === 400 || status === 404 || status === 409;
             }
-        });      
+        })
+        .then(onSuccess)
+        .catch(onError);     
     }
 }

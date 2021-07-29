@@ -9,3 +9,17 @@ div.content {
     padding: var(--spacing-large) var(--spacing-medium);
     margin: 0 auto;
 }
+
+.content button {
+    margin-top: var(--spacing-large);
+    margin-bottom: var(--spacing-large);
+
+    background-color: #111;
+    color: #fff;
+    border: 2px solid #111;
+}
+
+.content button:hover{
+    background-color: #fff;
+    color: #111;
+}
