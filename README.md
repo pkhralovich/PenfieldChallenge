@@ -1,4 +1,5 @@
 
+
 # PenfieldDigital technical challenge
 
 ## Results & expected use
@@ -11,6 +12,7 @@ On the Frontend side, I created one page that contains the entire survey and the
 
 After the survey is completed, the voucher is shown on the page. The idea was to trigger a Journey Event that also sends the voucher through email. 
 
+![Workflow](https://raw.githubusercontent.com/pkhralovich/PenfieldChallenge/main/Nike_2.png)
 
 ## Work environment
 
@@ -61,7 +63,7 @@ Inside the "src" folder of the frontend, we can find the following folders:
  - **Assets:** contains a general CSS file and a folder with some images used for the development.
  - **Components:** contains the components organized by folders. Each component has its own CSS file.
  - **Pages:** contains the pages available in the system.
- - **Services:** contains some HTTP services, the API config.
+ - **Services:** contains one HTTP service to call the API.
 
 ## Frontend libraries
 I only added one library during the development. It was [**axios**](https://www.npmjs.com/package/axios) to be able to make HTTP calls in a simple way. 
@@ -82,5 +84,3 @@ The libraries used for the backend development are:
  - [**Dotenv**](https://www.npmjs.com/package/dotenv): to parse the .env file
  - [**Joi**](https://www.npmjs.com/package/joi): to validate the data received in the API calls.
  - [**Sequelize**](https://www.npmjs.com/package/sequelize): SQL ORM to connect to my database
-
-
