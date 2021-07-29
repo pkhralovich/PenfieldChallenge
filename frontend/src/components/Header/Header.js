@@ -11,13 +11,13 @@ function App() {
     let user = "Pavel";
 
     return (
-        <div class="header">
+        <div className="header">
             <img src={nike_icon} className="icon" />
             <h1>Nike satisfaction survey</h1>
 
             <hr className="separator"/>
 
-            <p class="message">
+            <p className="message">
                 Hi {user}! Thank you for your purchase, now you are part of the family! <br/>
                 Please, complete this survey to help us to improve our service. <br/>
                 We will give you a discount voucher after you submit the questions.

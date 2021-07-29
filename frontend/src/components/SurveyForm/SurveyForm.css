@@ -1,5 +1,6 @@
 .form-survey {
     margin: var(--spacing-large) 0;
+    margin-bottom: 0;
     display: flex;
     flex-direction: column;
     color: #111 !important;
@@ -92,7 +93,7 @@
     }
 
     .form-survey button {
-        margin-top: 0;
+        margin-top: var(--spacing-medium);
         margin-bottom: 0;
     }
 
@@ -104,5 +105,9 @@
 
     .form-survey label.helper-full {
         display: none;
+    }
+
+    .form-survey {
+        margin-bottom: var(--spacing-large);
     }
 }

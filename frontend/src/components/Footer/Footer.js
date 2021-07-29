@@ -46,7 +46,7 @@ function App() {
                 </Grid>
 
                 {/* Footer spacing */}
-                <Grid item xs={false} sm={0} md={3}/>
+                <Grid item xs={false} sm={false} md={3}/>
 
                 {/* Footer social networks links */}
                 <Grid item xs={12} sm={3} md={3} className="social-container">
